@@ -29,7 +29,7 @@ runs {
     }
     server {
         systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
-        programArgument '--nogui'
+        arguments.add '--nogui'
     }
     gameTestServer {
         systemProperty 'forge.enabledGameTestNamespaces', project.mod_id
@@ -37,7 +37,7 @@ runs {
     data {
         workingDirectory project.file('run-data')
 
-        programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing-mod', 'create'
+        arguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath(), '--existing-mod', 'create'
     }
 }
 
